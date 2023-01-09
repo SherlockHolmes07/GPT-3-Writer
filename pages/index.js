@@ -72,7 +72,7 @@ const Home = () => {
   return (
     <div className="root">
       <Head>
-        <title>GPT-3 Writer | buildspace</title>
+        <title>GPT-3 Writer</title>
       </Head>
       <navbar>
         <div className="navbar-container">
@@ -126,10 +126,6 @@ const Home = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <div className="badge">
-            <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with buildspace</p>
-          </div>
         </a>
       </div>
       {apiOutput && (
