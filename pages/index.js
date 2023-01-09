@@ -12,7 +12,7 @@ const Home = () => {
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
     console.log("Calling OpenAI...");
-    const response = await fetch("/api/generateAction", {
+    const response = await fetch("/api/generate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
