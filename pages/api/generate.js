@@ -17,8 +17,8 @@ const generateAction = async (req, res) => {
     prompt: `${basePromptPrefix}${req.body.userInput}\n`,
     temperature: 0.7,
     max_tokens: 1400,
-  });
-  
+  }); 
+
   const basePromptOutput = baseCompletion.data.choices.pop();
 
   res.status(200).json({ output: basePromptOutput });
