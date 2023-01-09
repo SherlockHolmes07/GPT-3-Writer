@@ -413,3 +413,39 @@ textarea {
         transform: rotate(360deg);
     }
 }
+
+.navbar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1em;
+    text-decoration: none;
+}
+
+.btn{
+    background-color: #314837;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    line-height: 1em;
+    text-decoration: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.btn:hover{
+    background-color: #1F2D23;
+}
