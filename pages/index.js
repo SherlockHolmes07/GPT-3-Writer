@@ -11,40 +11,20 @@ const Home = () => {
 
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
+    console.log("Calling OpenAI...");
+    const response = await fetch("/api/generateAction", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userInput, app }),
+    });
 
-    if (app === "Essay") {
-      console.log("Calling OpenAI...");
-      const response = await fetch("/api/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ userInput }),
-      });
+    const data = await response.json();
+    const { output } = data;
+    console.log("OpenAI replied...", output.text);
 
-      const data = await response.json();
-      const { output } = data;
-      console.log("OpenAI replied...", output.text);
-
-      setApiOutput(`${output.text}`);
-    }
-
-    else {
-      console.log("Calling OpenAI...");
-      const response = await fetch("/api/grammerGenerate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ userInput }),
-      });
-
-      const data = await response.json();
-      const { output } = data;
-      console.log("OpenAI replied...", output.text);
-
-      setApiOutput(`${output.text}`); 
-    }
+    setApiOutput(`${output.text}`);
 
     setIsGenerating(false);
   };
@@ -125,8 +105,7 @@ const Home = () => {
           href="https://buildspace.so/builds/ai-writer"
           target="_blank"
           rel="noreferrer"
-        >
-        </a>
+        ></a>
       </div>
       {apiOutput && (
         <div className="output pb-5" style={{ marginBottom: "20px" }}>
