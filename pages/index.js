@@ -19,6 +19,12 @@ const Home = () => {
       },
       body: JSON.stringify({ userInput, app }),
     });
+    
+    // check for the error in response
+    if (!response.ok) {
+      const message = `An error has occured: ${response.status}`;
+      throw new Error(message);
+    }
 
     const data = await response.json();
     const { output } = data;

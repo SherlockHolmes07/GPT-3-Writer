@@ -23,7 +23,9 @@ const generateAction = async (req, res) => {
     const basePromptOutput = baseCompletion.data.choices.pop();
 
     res.status(200).json({ output: basePromptOutput });
-  } else {
+  } 
+  else {
+
     const basePromptPrefix = `Write me detailed essay in the style of George Orwell (also include some facts and figures) on the `;
     // Run first prompt
     console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
@@ -36,8 +38,7 @@ const generateAction = async (req, res) => {
     });
 
     const basePromptOutput = baseCompletion.data.choices.pop();
-
-    res.json({ output: basePromptOutput });
+    res.status(200).json({ output: basePromptOutput });
   }
 };
 
