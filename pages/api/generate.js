@@ -21,7 +21,7 @@ const generateAction = async (req, res) => {
       max_tokens: 1400,
     });
 
-    const basePromptOutput = await baseCompletion.data.choices.pop();
+    const basePromptOutput = baseCompletion.data.choices.pop();
     
     while(basePromptOutput === null){
        setTimeout(() => {
